@@ -9,18 +9,22 @@ public class Temperature {
         Scanner scanner = new Scanner(System.in);
 
         // Prompt the user to choose the conversion type
-        System.out.println("Choose the conversion type:");
-        System.out.println("1. Fahrenheit to Celsius");
-        System.out.println("2. Celsius to Fahrenheit");
+        System.out.println("Choose the type of temperature conversion you would like:");
+        System.out.println("1.Fahrenheit to Degrees Celsius");
+        System.out.println("2.Degrees Celsius to Fahrenheit");
         int choice = scanner.nextInt();
 
         // Perform the conversion based on user choice
-        if (choice == 1) {
-            fahrenheitToCelsius();
-        } else if (choice == 2) {
-            celsiusToFahrenheit();
-        } else {
-            System.out.println("Invalid choice! Please choose 1 or 2.");
+        switch (choice) {
+            case 1:
+                fahrenheitToCelsius();
+                break;
+            case 2:
+                celsiusToFahrenheit();
+                break;
+            default:
+                System.out.println("Invalid choice! Please choose 1 or 2.");
+                break;
         }
 
         scanner.close();
@@ -46,3 +50,4 @@ public class Temperature {
         scanner.close();
     }
 }
+
